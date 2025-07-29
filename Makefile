@@ -1,18 +1,9 @@
-.PHONY: install lint test docker run
-
+.PHONY: install lint test run
 install:
-    pip install -r requirements.txt
-
+	pip install -r requirements.txt
 lint:
-    black src tests
-    flake8 src tests
-
+	black src tests && flake8 src tests
 test:
-    pytest tests/
-
-docker:
-    docker build -t reddit-spark .
-
+	pytest tests/
 run:
-    python -m src.data.make_dataset
-    python -m src.models.train_model
+	python -m src.data.make_dataset && python -m src.models.train_model
