@@ -1,0 +1,12 @@
+pyspark>=3.5.0
+praw>=7.7.1
+pandas
+numpy
+matplotlib
+seaborn
+textblob
+wordcloud
+tqdm
+pytest
+black
+flake8
